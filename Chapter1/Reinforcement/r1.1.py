@@ -3,3 +3,7 @@ def is_multiple(n, m):
 
 print(is_multiple(10, 5))
 print(is_multiple(17, 5))
+
+# Outputs:
+# True
+# False

@@ -9,3 +9,10 @@ def minmax(data):
 
 
 print(minmax([21, 10, 43, 50, 32]))
+print(minmax([66, 10, 31, 78, 131]))
+print(minmax([111, 321, 907, 64, 20]))
+
+# Outputs
+# (10, 50)
+# (10, 131)
+# (20, 907)
