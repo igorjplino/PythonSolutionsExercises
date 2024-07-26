@@ -1,4 +1,4 @@
-from Chapter2.Vector import Vector
+from Vector import Vector
 
 class Vector_sub(Vector):
     def __init__(self, d):

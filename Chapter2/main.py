@@ -1,12 +1,18 @@
-from Chapter2.CreditCard import CreditCard
-from Chapter2.Exercises.Reinforcement.r2_11 import Vector_radd
-from Chapter2.Exercises.Reinforcement.r2_12 import Vector_mul
-from Chapter2.Exercises.Reinforcement.r2_13 import Vector_rmul
-from Chapter2.Exercises.Reinforcement.r2_6 import CreditCardWithPositiveAmount
-from Chapter2.Exercises.Reinforcement.r2_5 import CreditCardValidateNumber
-from Chapter2.Exercises.Reinforcement.r2_7 import CreditCardWithBalance
-from Chapter2.Exercises.Reinforcement.r2_9 import Vector_sub
-from Chapter2.Exercises.Reinforcement.r2_10 import Vector_neg
+import math
+from ArithmeticProgression import ArithmeticProgression
+from Exercises.Reinforcement.r2_23 import Sequence_lt
+from Exercises.Reinforcement.r2_22 import Sequence_eq
+from CreditCard import CreditCard
+from Exercises.Reinforcement.r2_11 import Vector_radd
+from Exercises.Reinforcement.r2_12 import Vector_mul
+from Exercises.Reinforcement.r2_13 import Vector_rmul
+from Exercises.Reinforcement.r2_15 import Vector_SenqInit
+from Exercises.Reinforcement.r2_18 import FibonacciProgression_FindPosition
+from Exercises.Reinforcement.r2_6 import CreditCardWithPositiveAmount
+from Exercises.Reinforcement.r2_5 import CreditCardValidateNumber
+from Exercises.Reinforcement.r2_7 import CreditCardWithBalance
+from Exercises.Reinforcement.r2_9 import Vector_sub
+from Exercises.Reinforcement.r2_10 import Vector_neg
 
 def r2_5():
     creditCard = CreditCardValidateNumber("Igor", "XPTO", "1234 5678 0987", 1000) # type: ignore
@@ -154,5 +160,48 @@ def r2_13():
     # Original: <0, 1, 2, 3, 4>
     # Multiplied by 4: <0, 4, 8, 12, 16>
 
-r2_12()
+def r2_15():
+    list_vector = Vector_SenqInit([4, 7, 5])
+    print(list_vector)
+
+    empty_vector = Vector_SenqInit(3)
+    print(empty_vector)
+
+    # Output
+    # <4, 7, 5>
+    # <0, 0, 0>
+
+def r2_18():
+    f = FibonacciProgression_FindPosition()
+
+    f.find_value_position(8)
+
+def r2_19():
+    progression = ArithmeticProgression(128)
+    count = 0
+    
+    number = math.pow(2, 20) # Careful, 63 take too long to run 
+    print(f"Goal: {number}")
+    for v in progression:
+        count += 1
+        print(f"Current value: {v} | Count: {count}")
+        if v >= number:
+            break
+
+    print(f"Final result: {count}")
+
+def r2_23():
+    seq1 = Sequence_lt([1, 2, 3])
+    seq2 = Sequence_lt([1, 2, 3])
+    print(seq1 < seq2)
+
+    seq1 = Sequence_lt([1, 2, 3])
+    seq2 = Sequence_lt([1, 2, 3, 4])
+    print(seq1 < seq2)
+
+    seq1 = Sequence_lt(['apple', 'banana', 'cherry'])
+    seq2 = Sequence_lt(['apple', 'banana', 'date'])
+    print(seq1 < seq2)   
+
+r2_23()
 

@@ -1,4 +1,4 @@
-from Chapter2.CreditCard import CreditCard
+from CreditCard import CreditCard
 
 class CreditCardWithPositiveAmount(CreditCard):
     
