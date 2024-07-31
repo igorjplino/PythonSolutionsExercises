@@ -37,6 +37,10 @@ class CreditCard:
     def get_balance(self):
         """Return current balance."""
         return self.balance
+    
+    def _set_balance(self, balance):
+        """Set new balance"""
+        self.balance = balance
 
     def charge(self, price):
         """

@@ -1,5 +1,9 @@
 import math
 from ArithmeticProgression import ArithmeticProgression
+from Exercises.Creativy.c2_32 import SqrtProgression
+from Exercises.Creativy.c2_31 import AbsDiffProgression
+from Exercises.Creativy.c2_30 import PredatoryCreditCard_c2_30
+from Exercises.Creativy.c2_27 import Range_Contains
 from Exercises.Reinforcement.r2_23 import Sequence_lt
 from Exercises.Reinforcement.r2_22 import Sequence_eq
 from CreditCard import CreditCard
@@ -203,5 +207,85 @@ def r2_23():
     seq2 = Sequence_lt(['apple', 'banana', 'date'])
     print(seq1 < seq2)   
 
-r2_23()
+def c2_27():
+    rang = Range_Contains(10)
+    print(3 in rang, 10 in rang, 23 in rang, -4 in rang)
 
+    # Output
+    # True False False False
+
+    rang = Range_Contains(5, 10)
+    print(3 in rang, 10 in rang, 23 in rang, -4 in rang)
+
+    # Output
+    # False True True False
+
+    rang = Range_Contains(5, 50, 2)
+    print(3 in rang, 10 in rang, 23 in rang, -4 in rang)
+
+    # Output
+    # False False True False
+
+    rang = Range_Contains(5, -50, -2)
+    print(3 in rang, 10 in rang, 23 in rang, -23 in rang)
+
+    # Output
+    # True False False True
+
+def c2_30():
+    wallet = []
+    wallet.append(PredatoryCreditCard_c2_30('John Bowman', 'California Savings', '5391 0375 9387 5309', 2500, 0.015))
+    wallet.append(PredatoryCreditCard_c2_30('John Bowman', 'California Federal', '3485 0399 3395 1954', 3500, 0.011))
+    wallet.append(PredatoryCreditCard_c2_30('John Bowman', 'California Finance', '5391 0375 9387 5309', 5000, 0.019))
+
+    for val in range(1, 17):
+        wallet[0].charge(val)
+        wallet[1].charge(2 * val)
+        wallet[2].charge(3 * val)
+
+    for c in range(3):
+        print("Customer =", wallet[c].get_customer())
+        print("Bank =", wallet[c].get_bank())
+        print("Account =", wallet[c].get_account())
+        print("Limit =", wallet[c].get_limit())
+        print("Balance =", wallet[c].get_balance())
+        while wallet[c].get_balance() > 100:
+            wallet[c].make_payment(100)
+            print("New balance =", wallet[c].get_balance())
+        print()
+
+    # Output
+    # Customer = John Bowman
+    # Bank = California Savings
+    # Account = 5391 0375 9387 5309
+    # Limit = 2500
+    # Balance = 136
+    # New balance = 36
+
+    # Customer = John Bowman
+    # Bank = California Federal
+    # Account = 3485 0399 3395 1954
+    # Limit = 3500
+    # Balance = 272
+    # New balance = 172
+    # New balance = 72
+
+    # Customer = John Bowman
+    # Bank = California Finance
+    # Account = 5391 0375 9387 5309
+    # Limit = 5000
+    # Balance = 408
+    # New balance = 308
+    # New balance = 208
+    # New balance = 108
+    # New balance = 8
+
+def c2_31():
+    prog = AbsDiffProgression()
+    prog.print_progression(10)
+
+def c2_32():
+    prog = SqrtProgression()
+    prog.print_progression(10)
+
+c2_32() 
