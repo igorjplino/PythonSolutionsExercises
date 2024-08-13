@@ -288,4 +288,4 @@ def c2_32():
     prog = SqrtProgression()
     prog.print_progression(10)
 
-c2_32() 
+c2_32()
